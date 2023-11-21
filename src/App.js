@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './contexts/CartContext'; // Import CartProvider from the correct path
+import { CartProvider } from './contexts/CartContext'; 
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
@@ -12,7 +12,7 @@ import CartPage from './pages/CartPage';
 
 function App() {
   return (
-    <CartProvider> {/* Wrap your application with CartProvider */}
+    <CartProvider> 
       <Router>
         <Navbar />
         <Routes>
