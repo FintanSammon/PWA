@@ -26,8 +26,7 @@ function Navbar() {
       </ul>
       <div className="right-section">
         <Link to="/cart">
-          {/* Optional: <FaShoppingCart className="cart-icon" /> If using react-icons */}
-          <span className="cart-icon">🛒</span> {/* Use an emoji or image if not using react-icons */}
+          <span className="cart-icon">🛒</span> 
         </Link>
       </div>
 
