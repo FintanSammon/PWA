@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { collection, getDocs, query, where } from "firebase/firestore"; 
-import { db } from '../firebase/firebaseConfig'; // Import the Firestore database from your firebase config
+import { db } from '../firebase/firebaseConfig'; 
 import './EcommercePage.css';
 
 function EcommercePage() {
     const [products, setProducts] = useState([]);
-    const [filter, setFilter] = useState('all'); // State to manage the current filter
+    const [filter, setFilter] = useState('all'); 
 
     useEffect(() => {
         async function getProducts() {
@@ -22,14 +22,12 @@ function EcommercePage() {
         }
 
         getProducts();
-    }, [filter]); // This effect runs when the `filter` state changes
-
+    }, [filter]); 
     return (
         <div className="ecommerce-container">
             <div className="content-wrapper">
                 <h1>Shop Page</h1>
 
-                {/* Filter Options */}
                 <div className="filter-container">
                     <button onClick={() => setFilter('all')}>All</button>
                     <button onClick={() => setFilter('cups')}>Cups</button>
@@ -37,7 +35,6 @@ function EcommercePage() {
                     <button onClick={() => setFilter('tshirts')}>T-Shirts</button>
                 </div>
 
-                {/* Products Grid */}
                 <div className="shop-container">
   {products.map(product => (
     <Link to={`/shop/${product.id}`} key={product.id} state={{ product }}>
